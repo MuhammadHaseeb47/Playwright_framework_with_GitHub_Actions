@@ -1,0 +1,19 @@
+{
+    "environment":"stod",
+    "DNS":".adeelprod.cwcdn.com",
+    "Login": {
+        "URL": "https://console-stagging.asians.group/#/domain/list",
+        "username": "adeel.sarwar@asians.cloud",
+        "password": "Abcd@321",
+        "apiURL":"asians.cloud"
+    },
+    "BasicConfiguration": {
+        "Upstream": "172.104.44.95:80",
+        "UpstreamQA": "202.82.127.10:80"
+    },
+    "webTerminalJumpServer": {
+        "URL": "https://jp.asians.cloud/luna/?_=1698304374370",
+        "username": "gaius",
+        "password": "RQZtpG+Nr16utO4xrKymS"
+    }
+}

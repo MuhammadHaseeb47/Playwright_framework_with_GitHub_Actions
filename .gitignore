@@ -1,0 +1,17 @@
+node_modules/
+/test-results/
+/playwright/.cache/
+playwright.yml
+/test-results/
+playwright-report/
+/blob-report/
+/playwright/.cache/
+/test-results/
+/playwright-report
+/blob-report/
+/playwright/.cache/
+/allure-results
+allure-report/
+.vscode/
+downloads/
+unzipped/
