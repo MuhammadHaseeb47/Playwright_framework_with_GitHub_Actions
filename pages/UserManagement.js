@@ -19,13 +19,13 @@ class UserManagement{
         await this.userRole.click()
         await this.ESSButton.click()
         await this.employeeName.fill('a')
-        // await this.page.keyboard.press('ArrowDown');
+        await this.page.keyboard.press('ArrowDown');
         await this.page.keyboard.press('Enter');
         await this.status.click()
-        // await this.enabledStatus.click()
-        // await this.usernameAndPassword('username').fill(username)
-        // await this.usernameAndPassword('password').fill(password)
-        // await this.usernameAndPassword('password').fill(password)
+        await this.enabledStatus.click()
+        await this.usernameAndPassword('username').fill(username)
+        await this.usernameAndPassword('password').fill(password)
+        await this.usernameAndPassword('password').fill(password)
         await this.saveButton.click()
     }
 }export default UserManagement
