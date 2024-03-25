@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import LoginPage from '../pages/LoginPage'
 import HomePage from '../pages/HomePage'
 const data = require ('../dataFiles/OrangeHRM.json')
-import UserManagement from '../pages/UserManagement';
+const { UserManagement } = require('../pages/UserManagementPage');
 
 let page;
 let loginPage

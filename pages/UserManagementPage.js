@@ -1,4 +1,4 @@
-class UserManagement{
+class UserManagementPage{
     constructor(page){
         this.page=page
         this.addButton              = page.locator('//h5[text()="System Users"]/ancestor::div//button[text()=" Add "]')
@@ -8,10 +8,9 @@ class UserManagement{
         this.saveButton             = page.locator('//button[contains(.,"Save")]')
         this.ESSButton              = page.locator('//div[contains(span,"ESS")]')
         this.enabledStatus          = page.locator('//div[contains(span,"Enabled")]')
-    }
-
-    async usernameAndPassword(text){
-        await this.page.locator(`//label[text()="${text}"]/parent::div/following-sibling::div//input`)
+        this.username               = page.locator(`//label[text()="Username"]/parent::div/following-sibling::div//input`)
+        this.password               = page.locator(`//label[text()="Password"]/parent::div/following-sibling::div//input`)
+        this.confirmPassword        = page.locator(`//label[text()="Confirm Password"]/parent::div/following-sibling::div//input`)
     }
 
     async addUserInfo(username,password){
@@ -23,9 +22,9 @@ class UserManagement{
         await this.page.keyboard.press('Enter');
         await this.status.click()
         await this.enabledStatus.click()
-        await this.usernameAndPassword('username').fill(username)
-        await this.usernameAndPassword('password').fill(password)
-        await this.usernameAndPassword('password').fill(password)
+        await this.username.fill(username)
+        await this.password.fill(password)
+        await this.confirmPassword.fill(password)
         await this.saveButton.click()
     }
-}export default UserManagement
+}module.exports = {UserManagementPage};
