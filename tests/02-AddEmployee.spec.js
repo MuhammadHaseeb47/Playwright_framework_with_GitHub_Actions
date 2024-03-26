@@ -37,12 +37,12 @@ test.describe('PIM | Employee Management',()=> {
     test('User is able to create employee',async()=>{
         await homePage.clickPimButton()
         await commonLocators.clickAddButton()
-        employeeId = commonMethods.generateRandomNumber(1000)
+        employeeId = commonMethods.generateRandomNumber(10000)
         await pimPage.addEmployeeNameAndId(data.EmployeeInfo.firstName,data.EmployeeInfo.middleName,data.EmployeeInfo.lastName,employeeId)
         // await pimPage.addProfilePicture('linkedin_post.png')
         await commonLocators.clickSaveButton();
         expect (await commonLocators.notification.textContent()).toContain(assertionsText.successfullyAdded)
-        
+
 
     })
 
