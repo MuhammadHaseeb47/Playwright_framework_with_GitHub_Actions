@@ -13,11 +13,11 @@ class UserManagementPage{
         this.confirmPassword        = page.locator(`//label[text()="Confirm Password"]/parent::div/following-sibling::div//input`)
     }
 
-    async addUserInfo(username,password){
+    async addUserInfo(username,password,employee){
         await this.addButton.click()
         await this.userRole.click()
         await this.ESSButton.click()
-        await this.employeeName.fill('a')
+        await this.employeeName.fill(employee)
         await this.page.keyboard.press('ArrowDown');
         await this.page.keyboard.press('Enter');
         await this.status.click()

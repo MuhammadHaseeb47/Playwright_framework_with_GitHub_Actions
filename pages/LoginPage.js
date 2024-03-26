@@ -1,5 +1,4 @@
 class LoginPage{
-
     constructor(page){
         this.userName               = page.locator('[name="username"]')
         this.password               = page.locator('//label[text()="Password"]/parent::div/parent::div//input')

@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 import LoginPage from '../pages/LoginPage'
 import HomePage from '../pages/HomePage'
-const data = require ('../dataFiles/OrangeHRM.json')
+const data = require ('../dataFiles/dynamic_data/OrangeHRM.json')
+const assertionsText = require('../dataFiles/dynamic_data/assertionsTest.json')
 const { UserManagement } = require('../pages/UserManagementPage');
 
 let page;
@@ -21,9 +22,9 @@ let userManagement
 
         test.beforeEach(async() => {
             await page.goto(data.Login.url ,{waitUntil:'load'})
-            expect(await loginPage.forgetPasswordText.textContent()).toContain('Forgot your password')
+            expect(await loginPage.forgetPasswordText.textContent()).toContain(assertionsText.forgetPassword)
             await loginPage.validLogin(data.Login.username,data.Login.password)
-            expect(await loginPage.pageHeadingText.textContent()).toMatch('Dashboard')
+            expect(await loginPage.pageHeadingText.textContent()).toMatch(assertionsText.dashboard)
         })
 
         test('verify that the user is able to add user', async() =>{
