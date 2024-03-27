@@ -11,9 +11,10 @@ class UserManagementPage{
         this.username               = page.locator(`//label[text()="Username"]/parent::div/following-sibling::div//input`)
         this.password               = page.locator(`//label[text()="Password"]/parent::div/following-sibling::div//input`)
         this.confirmPassword        = page.locator(`//label[text()="Confirm Password"]/parent::div/following-sibling::div//input`)
+        this.enabledRadioButton     = page.locator('//label[text()="Enabled"]//input')
     }
 
-    async addUserInfo(username,password,employee){
+    async addUserInfo(employee){
         await this.addButton.click()
         await this.userRole.click()
         await this.ESSButton.click()
@@ -22,9 +23,11 @@ class UserManagementPage{
         await this.page.keyboard.press('Enter');
         await this.status.click()
         await this.enabledStatus.click()
-        await this.username.fill(username)
-        await this.password.fill(password)
-        await this.confirmPassword.fill(password)
-        await this.saveButton.click()
+    }
+
+    async addLoginInfo(user, pass){
+        await this.username.fill(user)
+        await this.password.fill(pass)
+        await this.confirmPassword.fill(pass)
     }
 }module.exports = {UserManagementPage};

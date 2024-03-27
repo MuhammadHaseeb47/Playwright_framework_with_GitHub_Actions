@@ -6,4 +6,5 @@ class CommonMethods{
         console.log(randomNumber)
         return randomNumber;
     }
+
 }export default CommonMethods

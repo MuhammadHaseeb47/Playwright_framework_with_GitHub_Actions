@@ -10,7 +10,9 @@ class PIMPage{
         this.saveButton             = page.locator('//button[contains(.,"Save")]')
         this.licenseNumber          = page.locator('//label[contains(.,"License Number")]/parent::div/following-sibling::div//input')
         this.licenseExpiryDate      = page.locator('//label[contains(.,"License Expiry")]/parent::div/following-sibling::div//input')
-        this.profilePicture         = page.locator('//h6[text()="Add Employee"]/following::div//img')
+        this.profilePicture         = page.locator('//h6[text()="Add Employee"]/following::form/div//input[@type="file"]')
+        this.createLoginDetails     = page.locator('//p[contains(.,"Create Login")]/parent::div/div//input[@type="checkbox"]')
+        
     }
 
     async addEmployeeNameAndId(first,middle,last,id){
@@ -26,6 +28,14 @@ class PIMPage{
 
     async selectGender(gender){
         await this.page.locator(`//div[contains(span,"${gender}")]`)
+    }
+
+    async addProfilePicture(filePath,myfile){
+        await this.profilePicture.setInputFiles(path.join(filePath, myfile));
+    }
+
+    async clickCreateLoginDetailsButton(){
+        await this.createLoginDetails.click()
     }
 
 

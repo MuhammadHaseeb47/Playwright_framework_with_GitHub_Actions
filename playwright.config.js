@@ -9,7 +9,6 @@ module.exports = defineConfig({
   
   // ...config,
   testDir: './tests',
-  // outputDir: './data-files',
   timeout: 100000,
   /* Run tests in files in parallel */
   fullyParallel: false,
