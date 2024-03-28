@@ -19,6 +19,7 @@ class UserManagementPage{
         await this.userRole.click()
         await this.ESSButton.click()
         await this.employeeName.fill(employee)
+        await this.page.waitForTimeout(1000)
         await this.page.keyboard.press('ArrowDown');
         await this.page.keyboard.press('Enter');
         await this.status.click()

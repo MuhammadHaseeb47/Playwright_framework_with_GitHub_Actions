@@ -4,6 +4,8 @@
     "successfullySave":"Successfully Saved",
     "successfullyAdded":"Successfully Added",
     "successfullyUpdated":"Successfully Updated",
-    "success":"Success"
+    "success":"Success",
+    "pimHeading":"PIM",
+    "oneRecord":"(1) Record Found"
     
 }

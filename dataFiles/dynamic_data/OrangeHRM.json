@@ -1,17 +1,25 @@
 {
-    "Login":{
-        "url":"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-        "username":"Admin",
-        "password":"admin123"
+    "Login": {
+        "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        "username": "Admin",
+        "password": "admin123"
     },
-    "UserData":{
-        "username":"haseeb",
-        "password":"haseeb0987"
+    "UserData": {
+        "username": "haseeb",
+        "password": "haseeb0987",
+        "employeeUsername": "5531haseeb"
     },
-    "EmployeeInfo":{
-        "firstName":"Muhammad",
-        "middleName":"Haseeb",
-        "lastName":"47"
-        
+    "EmployeeInfo": {
+        "firstName": "Muhammad",
+        "middleName": "Haseeb",
+        "lastName": "47",
+        "nationality": "Pakistani",
+        "gender": "Male",
+        "jobTitle": "QA Engineer",
+        "employmentStatus": "Full-Time Permanent",
+        "subUnit": "Quality Assurance",
+        "reportingMethod": "Direct",
+        "employeeId": "5531",
+        "employeeName": "Muhammad Haseeb 5531"
     }
 }

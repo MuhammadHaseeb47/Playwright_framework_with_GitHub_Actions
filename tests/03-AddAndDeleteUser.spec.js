@@ -3,7 +3,7 @@ import LoginPage from '../pages/LoginPage'
 import HomePage from '../pages/HomePage'
 const data = require ('../dataFiles/dynamic_data/OrangeHRM.json')
 const assertionsText = require('../dataFiles/dynamic_data/assertionsTest.json')
-const { UserManagement } = require('../pages/UserManagementPage');
+import { UserManagementPage } from '../pages/UserManagementPage';
 import CommonLocators from '../pages/commonLocatorsPage';
 
 let page;
@@ -11,14 +11,15 @@ let loginPage
 let homePage
 let userManagement
 let commonLocators;
+let context
     test.describe('User Management',() => {
 
         test.beforeAll(async({browser}) => {
-            let context = await browser.newContext()
+            context = await browser.newContext()
             page = await context.newPage();
             loginPage = new LoginPage(page)
             homePage = new HomePage(page)
-            userManagement = new UserManagement(page)
+            userManagement = new UserManagementPage(page)
             commonLocators = new CommonLocators(page)
         })
 
@@ -29,9 +30,13 @@ let commonLocators;
             expect(await loginPage.pageHeadingText.textContent()).toMatch(assertionsText.dashboard)
         })
 
+        test.afterAll(async() =>{
+            await context.close()
+        })
+
         test('verify that the user is able to add user', async() =>{
             await homePage.clickAdminButton()
-            await userManagement.addUserInfo()//employee 
+            await userManagement.addUserInfo(data.EmployeeInfo.employeeName)
             await userManagement.addLoginInfo(data.UserData.username,data.UserData.password)
             await commonLocators.clickSaveButton()
         })
