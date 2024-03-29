@@ -7,7 +7,9 @@
     "UserData": {
         "username": "haseeb",
         "password": "haseeb0987",
-        "employeeUsername": "5531haseeb"
+        "employeeUsername": "1182haseeb",
+        "userRole":"ESS",
+        "userStatus":"Enabled"
     },
     "EmployeeInfo": {
         "firstName": "Muhammad",
@@ -19,7 +21,7 @@
         "employmentStatus": "Full-Time Permanent",
         "subUnit": "Quality Assurance",
         "reportingMethod": "Direct",
-        "employeeId": "5531",
-        "employeeName": "Muhammad Haseeb 5531"
+        "employeeId": "1182",
+        "employeeName": "Muhammad Haseeb 1182"
     }
 }

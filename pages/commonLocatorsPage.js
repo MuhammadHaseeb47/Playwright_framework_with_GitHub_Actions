@@ -8,6 +8,8 @@ class CommonLocators {
         this.pageHeadingText        = page.locator('//h6/parent::span')
         this.searchButton           = page.locator('//button[text()=" Search "]')
         this.oneRecordFoundText     = page.locator('//div[contains(span,"(1) Record Found")]')
+        this.deleteIcon             = page.locator('[class="oxd-icon bi-trash"]')
+        this.yesDeleteButton        = page.locator('//button[contains(.,"Yes, Delete")]')
     }
 
     async cellsInTable(index){
@@ -17,6 +19,12 @@ class CommonLocators {
 
     async clickButtonToSave(num){
         await this.page.locator(`(//button[contains(.,"Save")])[${num}]`)
+    }
+
+    async deleteEntry(){
+        await this.deleteIcon.click()
+        await this.yesDeleteButton.waitForSelector();
+        await this.yesDeleteButton.click();
     }
 
     async clickAddButton(){

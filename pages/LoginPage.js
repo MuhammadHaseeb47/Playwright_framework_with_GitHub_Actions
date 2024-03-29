@@ -22,4 +22,8 @@ class LoginPage{
         await this.usernameButton.click()
         await this.logoutButton.click()
     }
+
+    async waitForOrangeHRMLogo(timeout = 30000) {
+        await this.orangeHRMLogo.waitFor(timeout);
+    }
 }export default LoginPage;

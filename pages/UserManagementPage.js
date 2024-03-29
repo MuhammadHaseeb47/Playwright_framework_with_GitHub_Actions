@@ -12,6 +12,7 @@ class UserManagementPage{
         this.password               = page.locator(`//label[text()="Password"]/parent::div/following-sibling::div//input`)
         this.confirmPassword        = page.locator(`//label[text()="Confirm Password"]/parent::div/following-sibling::div//input`)
         this.enabledRadioButton     = page.locator('//label[text()="Enabled"]//input')
+        
     }
 
     async addUserInfo(employee){

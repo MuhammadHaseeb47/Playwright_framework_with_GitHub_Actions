@@ -87,7 +87,6 @@ test.describe('PIM | Employee Management',()=> {
         await pimPage.clickAddAssignedSupervisor(user,data.EmployeeInfo.reportingMethod)
 
         await commonLocators.clickSaveButton();
-        expect (await commonLocators.notification.textContent()).toMatch(assertionsText.success)
 
         let jsonData = JSON.parse(fs.readFileSync('dataFiles/dynamic_data/OrangeHRM.json', 'utf8'));
         jsonData.UserData.employeeUsername = employeeUsername;
@@ -95,6 +94,7 @@ test.describe('PIM | Employee Management',()=> {
         jsonData.EmployeeInfo.employeeName = employee;
         fs.writeFileSync('dataFiles/dynamic_data/OrangeHRM.json', JSON.stringify(jsonData, null, 4), 'utf8');
 
+        expect (await commonLocators.notification.textContent()).toMatch(assertionsText.success)
     })
 
     test('user is able to search the employee',async()=>{
